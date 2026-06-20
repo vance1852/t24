@@ -1,0 +1,80 @@
+[
+  {
+    "dispute_id": "DISP001",
+    "lot_id": "L1001",
+    "bid_id": "BID004",
+    "type": "suspicious_bidding",
+    "description": "买家B001在1分钟内连续加价两次，可能存在抬价行为",
+    "status": "open",
+    "buyer_id": "B001",
+    "seller_id": null,
+    "resolution_notes": null,
+    "created_at": "2026-06-15T11:00:00",
+    "resolved_at": null
+  },
+  {
+    "dispute_id": "DISP002",
+    "lot_id": "L1002",
+    "bid_id": "BID008",
+    "type": "withdrawn_bid",
+    "description": "买家B004撤回出价28000元，需要确认是否影响最终成交",
+    "status": "auto_dismissed",
+    "buyer_id": "B004",
+    "seller_id": null,
+    "resolution_notes": "撤回出价已自动排除，不影响成交结果",
+    "created_at": "2026-06-15T12:00:00",
+    "resolved_at": "2026-06-15T12:30:00"
+  },
+  {
+    "dispute_id": "DISP003",
+    "lot_id": "L1007",
+    "bid_id": null,
+    "type": "price_anomaly",
+    "description": "成交价9500元大幅低于估值18000元，需要复核",
+    "status": "needs_review",
+    "buyer_id": null,
+    "seller_id": null,
+    "resolution_notes": null,
+    "created_at": "2026-06-15T13:00:00",
+    "resolved_at": null
+  },
+  {
+    "dispute_id": "DISP004",
+    "lot_id": "L1009",
+    "bid_id": "BID026",
+    "type": "price_anomaly",
+    "description": "成交价120000元远高于估值42000元，可能存在异常出价",
+    "status": "needs_review",
+    "buyer_id": "B001",
+    "seller_id": null,
+    "resolution_notes": null,
+    "created_at": "2026-06-15T14:00:00",
+    "resolved_at": null
+  },
+  {
+    "dispute_id": "DISP005",
+    "lot_id": "L1010",
+    "bid_id": null,
+    "type": "duplicate_serial",
+    "description": "设备序列号OLY-2021-BX53-001与L1001重复",
+    "status": "open",
+    "buyer_id": null,
+    "seller_id": "S002",
+    "resolution_notes": null,
+    "created_at": "2026-06-15T15:00:00",
+    "resolved_at": null
+  },
+  {
+    "dispute_id": "DISP006",
+    "lot_id": "L1005",
+    "bid_id": "BID015",
+    "type": "reserve_price",
+    "description": "买家B003为个人买家，参与了限制个人的拍品L1005",
+    "status": "auto_dismissed",
+    "buyer_id": "B003",
+    "seller_id": null,
+    "resolution_notes": "个人买家出价已自动排除，最终由B001成交",
+    "created_at": "2026-06-15T16:00:00",
+    "resolved_at": "2026-06-15T16:15:00"
+  }
+]

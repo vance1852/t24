@@ -1,0 +1,272 @@
+[
+  {
+    "bid_id": "BID001",
+    "lot_id": "L1001",
+    "buyer_id": "B001",
+    "amount": "52000.00",
+    "timestamp": "2026-06-10T09:15:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID002",
+    "lot_id": "L1001",
+    "buyer_id": "B002",
+    "amount": "55000.00",
+    "timestamp": "2026-06-10T09:20:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID003",
+    "lot_id": "L1001",
+    "buyer_id": "B001",
+    "amount": "58000.00",
+    "timestamp": "2026-06-10T09:25:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID004",
+    "lot_id": "L1001",
+    "buyer_id": "B001",
+    "amount": "60000.00",
+    "timestamp": "2026-06-10T09:26:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID005",
+    "lot_id": "L1001",
+    "buyer_id": "B002",
+    "amount": "60000.00",
+    "timestamp": "2026-06-10T09:30:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID006",
+    "lot_id": "L1002",
+    "buyer_id": "B003",
+    "amount": "20000.00",
+    "timestamp": "2026-06-10T09:10:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID007",
+    "lot_id": "L1002",
+    "buyer_id": "B004",
+    "amount": "26000.00",
+    "timestamp": "2026-06-10T09:15:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID008",
+    "lot_id": "L1002",
+    "buyer_id": "B004",
+    "amount": "28000.00",
+    "timestamp": "2026-06-10T09:16:00",
+    "is_withdrawn": true,
+    "withdrawal_reason": "买家操作失误",
+    "withdrawal_time": "2026-06-10T09:17:00"
+  },
+  {
+    "bid_id": "BID009",
+    "lot_id": "L1002",
+    "buyer_id": "B002",
+    "amount": "30000.00",
+    "timestamp": "2026-06-10T09:20:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID010",
+    "lot_id": "L1003",
+    "buyer_id": "B005",
+    "amount": "30000.00",
+    "timestamp": "2026-06-10T09:05:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID011",
+    "lot_id": "L1003",
+    "buyer_id": "B001",
+    "amount": "38000.00",
+    "timestamp": "2026-06-10T09:10:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID012",
+    "lot_id": "L1003",
+    "buyer_id": "B002",
+    "amount": "40000.00",
+    "timestamp": "2026-06-10T09:12:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID013",
+    "lot_id": "L1004",
+    "buyer_id": "B003",
+    "amount": "18000.00",
+    "timestamp": "2026-06-10T09:08:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID014",
+    "lot_id": "L1004",
+    "buyer_id": "B003",
+    "amount": "19000.00",
+    "timestamp": "2026-06-10T09:09:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID015",
+    "lot_id": "L1005",
+    "buyer_id": "B003",
+    "amount": "75000.00",
+    "timestamp": "2026-06-10T09:20:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID016",
+    "lot_id": "L1005",
+    "buyer_id": "B001",
+    "amount": "80000.00",
+    "timestamp": "2026-06-10T09:25:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID017",
+    "lot_id": "L1006",
+    "buyer_id": "B004",
+    "amount": "32000.00",
+    "timestamp": "2026-06-10T09:15:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID018",
+    "lot_id": "L1006",
+    "buyer_id": "B002",
+    "amount": "35000.00",
+    "timestamp": "2026-06-10T09:20:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID019",
+    "lot_id": "L1007",
+    "buyer_id": "B005",
+    "amount": "7000.00",
+    "timestamp": "2026-06-10T09:10:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID020",
+    "lot_id": "L1007",
+    "buyer_id": "B003",
+    "amount": "8500.00",
+    "timestamp": "2026-06-10T09:15:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID021",
+    "lot_id": "L1007",
+    "buyer_id": "B005",
+    "amount": "9000.00",
+    "timestamp": "2026-06-10T09:18:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID022",
+    "lot_id": "L1007",
+    "buyer_id": "B005",
+    "amount": "9500.00",
+    "timestamp": "2026-06-10T09:18:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID023",
+    "lot_id": "L1008",
+    "buyer_id": "B001",
+    "amount": "15000.00",
+    "timestamp": "2026-06-10T09:10:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID024",
+    "lot_id": "L1008",
+    "buyer_id": "B002",
+    "amount": "18000.00",
+    "timestamp": "2026-06-13T09:05:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID025",
+    "lot_id": "L1009",
+    "buyer_id": "B004",
+    "amount": "25000.00",
+    "timestamp": "2026-06-10T09:15:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID026",
+    "lot_id": "L1009",
+    "buyer_id": "B001",
+    "amount": "120000.00",
+    "timestamp": "2026-06-10T09:20:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  },
+  {
+    "bid_id": "BID027",
+    "lot_id": "L1010",
+    "buyer_id": "B002",
+    "amount": "40000.00",
+    "timestamp": "2026-06-10T09:10:00",
+    "is_withdrawn": false,
+    "withdrawal_reason": null,
+    "withdrawal_time": null
+  }
+]

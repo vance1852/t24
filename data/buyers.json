@@ -1,0 +1,52 @@
+[
+  {
+    "buyer_id": "B001",
+    "name": "北京协和医院采购部",
+    "email": "purchase@pumch.cn",
+    "type": "institution",
+    "province": "北京",
+    "deposit_balance": "50000.00",
+    "is_high_risk": false,
+    "phone": "010-88888888"
+  },
+  {
+    "buyer_id": "B002",
+    "name": "上海生物科技有限公司",
+    "email": "buy@sh-biotech.com",
+    "type": "business",
+    "province": "上海",
+    "deposit_balance": "30000.00",
+    "is_high_risk": false,
+    "phone": "021-66666666"
+  },
+  {
+    "buyer_id": "B003",
+    "name": "张明 (个人买家)",
+    "email": "zhangming@example.com",
+    "type": "individual",
+    "province": "江苏",
+    "deposit_balance": "5000.00",
+    "is_high_risk": false,
+    "phone": "13800138001"
+  },
+  {
+    "buyer_id": "B004",
+    "name": "广州医疗器械贸易公司",
+    "email": "trade@gz-med.com",
+    "type": "business",
+    "province": "广东",
+    "deposit_balance": "15000.00",
+    "is_high_risk": true,
+    "phone": "020-77777777"
+  },
+  {
+    "buyer_id": "B005",
+    "name": "李华 (个人买家)",
+    "email": "lihua@example.com",
+    "type": "individual",
+    "province": "浙江",
+    "deposit_balance": "2000.00",
+    "is_high_risk": false,
+    "phone": "13900139002"
+  }
+]

@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "auction-settle"
+version = "0.1.0"
+description = "Local CLI tool for second-hand lab equipment auction settlement and audit"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Auction Team"}]
+keywords = ["auction", "settlement", "lab", "equipment", "audit"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "click>=8.1.0",
+    "tabulate>=0.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+auction-settle = "auction_settle.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["auction_settle*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

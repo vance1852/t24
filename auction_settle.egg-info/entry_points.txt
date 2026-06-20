@@ -1,0 +1,2 @@
+[console_scripts]
+auction-settle = auction_settle.cli:main

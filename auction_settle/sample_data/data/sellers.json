@@ -1,0 +1,23 @@
+[
+  {
+    "seller_id": "S001",
+    "name": "清华大学生物医学仪器实验室",
+    "email": "lab@tsinghua.edu.cn",
+    "province": "北京",
+    "phone": "010-12345678"
+  },
+  {
+    "seller_id": "S002",
+    "name": "上海医疗器械有限公司",
+    "email": "sales@sh-medical.com",
+    "province": "上海",
+    "phone": "021-87654321"
+  },
+  {
+    "seller_id": "S003",
+    "name": "广州科研设备调剂中心",
+    "email": "equipment@gz-research.com",
+    "province": "广东",
+    "phone": "020-11112222"
+  }
+]
