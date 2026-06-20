@@ -75,15 +75,15 @@ def init(ctx: click.Context, data_dir: str, force: bool) -> None:
         return
     
     target_dir = initialize_sample_data(target_dir)
-    click.echo(f"✓ 样例数据已初始化到: {target_dir}")
+    click.echo(f"[OK] 样例数据已初始化到: {target_dir}")
     click.echo("")
     click.echo("包含以下样例数据:")
-    click.echo("  • 10 个拍品 (含显微镜、离心机、示波器、恒温箱等)")
-    click.echo("  • 27 条出价记录 (含撤回、同价、低于保留价等边界情况)")
-    click.echo("  • 5 位买家 (含个人、企业、机构)")
-    click.echo("  • 3 位卖家")
-    click.echo("  • 6 条争议记录")
-    click.echo("  • 可配置的费用规则")
+    click.echo("  - 10 个拍品 (含显微镜、离心机、示波器、恒温箱等)")
+    click.echo("  - 27 条出价记录 (含撤回、同价、低于保留价等边界情况)")
+    click.echo("  - 5 位买家 (含个人、企业、机构)")
+    click.echo("  - 3 位卖家")
+    click.echo("  - 6 条争议记录")
+    click.echo("  - 可配置的费用规则")
 
 
 @main.command()
@@ -131,13 +131,13 @@ def settle(ctx: click.Context, batch_id: str, output_format: str, output: str) -
     if output_format == "json":
         output_path = output or f"settlement_{batch_id}.json"
         save_json_file(output_path, batch_result.to_dict())
-        click.echo(f"✓ 结算结果已导出到: {output_path}")
+        click.echo(f"[OK] 结算结果已导出到: {output_path}")
         return
     
     if output_format == "csv":
         output_path = output or f"settlement_{batch_id}.csv"
         export_settlements_to_csv(settlements, output_path)
-        click.echo(f"✓ 结算结果已导出到: {output_path}")
+        click.echo(f"[OK] 结算结果已导出到: {output_path}")
         return
     
     click.echo("=" * 80)
@@ -147,9 +147,9 @@ def settle(ctx: click.Context, batch_id: str, output_format: str, output: str) -
     
     table_data = []
     for s in settlements:
-        status = "✓ 已成交" if s.is_sold else "✗ 未成交"
+        status = "[OK] 已成交" if s.is_sold else "[X] 未成交"
         if s.lot.status.value == "withdrawn":
-            status = "⊘ 已撤拍"
+            status = "[--] 已撤拍"
         
         sale_price = format_decimal(s.sale_price) if s.sale_price else "-"
         buyer_name = s.winning_buyer.name if s.winning_buyer else "-"
@@ -241,13 +241,13 @@ def buyer_bill(ctx: click.Context, buyer_id: str, output_format: str, output: st
     if output_format == "json":
         output_path = output or "buyer_bills.json"
         save_json_file(output_path, [b.to_dict() for b in bills])
-        click.echo(f"✓ 买家账单已导出到: {output_path}")
+        click.echo(f"[OK] 买家账单已导出到: {output_path}")
         return
     
     if output_format == "csv":
         output_path = output or "buyer_bills.csv"
         export_buyer_bills_to_csv(bills, output_path)
-        click.echo(f"✓ 买家账单已导出到: {output_path}")
+        click.echo(f"[OK] 买家账单已导出到: {output_path}")
         return
     
     for bill in bills:
@@ -328,13 +328,13 @@ def seller_statement(ctx: click.Context, seller_id: str, output_format: str, out
     if output_format == "json":
         output_path = output or "seller_statements.json"
         save_json_file(output_path, [s.to_dict() for s in statements])
-        click.echo(f"✓ 卖家结算单已导出到: {output_path}")
+        click.echo(f"[OK] 卖家结算单已导出到: {output_path}")
         return
     
     if output_format == "csv":
         output_path = output or "seller_statements.csv"
         export_seller_statements_to_csv(statements, output_path)
-        click.echo(f"✓ 卖家结算单已导出到: {output_path}")
+        click.echo(f"[OK] 卖家结算单已导出到: {output_path}")
         return
     
     for stmt in statements:
@@ -405,13 +405,13 @@ def audit(ctx: click.Context, output_format: str, output: str, severity: str) ->
     if output_format == "json":
         output_path = output or "audit_findings.json"
         save_json_file(output_path, audit_findings)
-        click.echo(f"✓ 审计结果已导出到: {output_path}")
+        click.echo(f"[OK] 审计结果已导出到: {output_path}")
         return
     
     if output_format == "csv":
         output_path = output or "audit_findings.csv"
         export_audit_findings_to_csv(audit_findings, output_path)
-        click.echo(f"✓ 审计结果已导出到: {output_path}")
+        click.echo(f"[OK] 审计结果已导出到: {output_path}")
         return
     
     click.echo("=" * 80)
@@ -420,14 +420,14 @@ def audit(ctx: click.Context, output_format: str, output: str, severity: str) ->
     click.echo("")
     
     if not audit_findings:
-        click.echo("✓ 未发现异常，所有结算正常")
+        click.echo("[OK] 未发现异常，所有结算正常")
         return
     
-    severity_map = {"high": "🔴 高", "medium": "🟡 中", "low": "🟢 低"}
+    severity_map = {"high": "[HIGH]", "medium": "[MED]", "low": "[LOW]"}
     
     table_data = []
     for i, finding in enumerate(audit_findings, 1):
-        sev = severity_map.get(finding.get("severity", "low"), "🟢 低")
+        sev = severity_map.get(finding.get("severity", "low"), "[LOW]")
         lot_id = finding.get("lot_id", "-")
         ftype = finding.get("type", "-")
         desc = finding.get("description", "")[:60]
@@ -447,7 +447,7 @@ def audit(ctx: click.Context, output_format: str, output: str, severity: str) ->
     click.echo("-" * 80)
     
     for i, finding in enumerate(audit_findings, 1):
-        sev = severity_map.get(finding.get("severity", "low"), "🟢 低")
+        sev = severity_map.get(finding.get("severity", "low"), "[LOW]")
         click.echo("")
         click.echo(f"{i}. {sev} - {finding.get('type')}")
         click.echo(f"   拍品: {finding.get('lot_id', '-')}  {finding.get('lot_name', '')}")
@@ -497,7 +497,7 @@ def explain(ctx: click.Context, args: tuple, output_format: str, output: str) ->
     if output_format == "json":
         output_path = output or f"explain_{lot_id}.json"
         save_json_file(output_path, settlement.to_dict())
-        click.echo(f"✓ 拍品说明已导出到: {output_path}")
+        click.echo(f"[OK] 拍品说明已导出到: {output_path}")
         return
     
     click.echo("=" * 80)
@@ -505,7 +505,7 @@ def explain(ctx: click.Context, args: tuple, output_format: str, output: str) ->
     click.echo("=" * 80)
     click.echo("")
     
-    click.echo("📋 拍品信息:")
+    click.echo("[INFO] 拍品信息:")
     click.echo(f"  类别: {lot.category}")
     click.echo(f"  序列号: {lot.serial_number or '无'}")
     click.echo(f"  检测等级: {lot.inspection_grade.value}")
@@ -525,7 +525,7 @@ def explain(ctx: click.Context, args: tuple, output_format: str, output: str) ->
     click.echo(f"  卖家: {seller_map[lot.seller_id].name}")
     click.echo("")
     
-    click.echo("💰 出价记录:")
+    click.echo("[BID] 出价记录:")
     all_bids = sorted(lot_bids, key=lambda b: b.timestamp)
     for bid in all_bids:
         buyer = buyer_map.get(bid.buyer_id)
@@ -537,42 +537,42 @@ def explain(ctx: click.Context, args: tuple, output_format: str, output: str) ->
                    f"{format_decimal(bid.amount)} 元{status}")
     click.echo("")
     
-    click.echo("🚫 被排除的出价:")
+    click.echo("[EXCL] 被排除的出价:")
     if not settlement.excluded_bids:
         click.echo("  无")
     else:
         for excl in settlement.excluded_bids:
             buyer = buyer_map.get(excl.bid.buyer_id)
-            click.echo(f"  • {excl.bid.bid_id}: {format_decimal(excl.bid.amount)} 元 "
+            click.echo(f"  - {excl.bid.bid_id}: {format_decimal(excl.bid.amount)} 元 "
                        f"({buyer.name if buyer else excl.bid.buyer_id})")
             click.echo(f"    原因: {excl.reason}")
             click.echo(f"    规则: {excl.rule}")
     click.echo("")
     
-    click.echo("🏆 成交结果:")
+    click.echo("[RESULT] 成交结果:")
     for line in settlement.explanation:
         click.echo(f"  {line}")
     click.echo("")
     
     if settlement.fees:
-        click.echo("📊 费用拆分:")
+        click.echo("[FEE] 费用拆分:")
         for fee_name, fee_amount in settlement.fees.items():
             click.echo(f"  {fee_name}: {format_decimal(fee_amount)} 元")
         click.echo("")
     
     if settlement.disputes:
-        click.echo("⚖️  关联争议:")
+        click.echo("[DISPUTE] 关联争议:")
         for disp in settlement.disputes:
-            click.echo(f"  • {disp.dispute_id}: {disp.type.value} - {disp.description}")
+            click.echo(f"  - {disp.dispute_id}: {disp.type.value} - {disp.description}")
             click.echo(f"    状态: {disp.status.value}")
             if disp.resolution_notes:
                 click.echo(f"    处理备注: {disp.resolution_notes}")
         click.echo("")
     
     if settlement.audit_flags:
-        click.echo("🔍 审计标记:")
+        click.echo("[AUDIT] 审计标记:")
         for flag in settlement.audit_flags:
-            click.echo(f"  • {flag}")
+            click.echo(f"  - {flag}")
 
 
 @main.command()
@@ -623,7 +623,7 @@ def export(ctx: click.Context, output_format: str, output: str, include: List[st
         
         output_path = output or "auction_summary.json"
         save_json_file(output_path, export_data)
-        click.echo(f"✓ 汇总报表已导出到: {output_path}")
+        click.echo(f"[OK] 汇总报表已导出到: {output_path}")
         
         total_sales = sum(
             (s.sale_price or Decimal("0")) for s in settlements if s.is_sold
@@ -631,13 +631,13 @@ def export(ctx: click.Context, output_format: str, output: str, include: List[st
         click.echo("")
         click.echo("导出内容:")
         if include_all or "settlements" in include:
-            click.echo(f"  • {len(settlements)} 条拍品结算记录")
+            click.echo(f"  - {len(settlements)} 条拍品结算记录")
         if include_all or "buyers" in include:
-            click.echo(f"  • {len(buyer_bills)} 份买家账单")
+            click.echo(f"  - {len(buyer_bills)} 份买家账单")
         if include_all or "sellers" in include:
-            click.echo(f"  • {len(seller_statements)} 份卖家结算单")
+            click.echo(f"  - {len(seller_statements)} 份卖家结算单")
         if include_all or "audit" in include:
-            click.echo(f"  • {len(audit_findings)} 项审计发现")
+            click.echo(f"  - {len(audit_findings)} 项审计发现")
         click.echo(f"总成交额: {format_decimal(total_sales)} 元")
         return
     
@@ -663,10 +663,10 @@ def export(ctx: click.Context, output_format: str, output: str, include: List[st
             export_audit_findings_to_csv(audit_findings, path)
             files_created.append(path)
         
-        click.echo(f"✓ CSV文件已导出到目录: {output_dir}")
+        click.echo(f"[OK] CSV文件已导出到目录: {output_dir}")
         click.echo("")
         for f in files_created:
-            click.echo(f"  • {os.path.basename(f)}")
+            click.echo(f"  - {os.path.basename(f)}")
 
 
 if __name__ == "__main__":
