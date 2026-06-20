@@ -35,3 +35,4 @@ include = ["auction_settle*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "-p no:asyncio"
